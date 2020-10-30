@@ -1,5 +1,4 @@
-('C:\\Users\\willi\\Desktop\\3o '
- 'Ano\\Redes\\t2-UDP\\build\\clientUDP\\PYZ-00.pyz',
+('C:\\Users\\willi\\Documents\\GitHub\\Internet-Speed-Test\\UDP\\build\\clientUDP\\PYZ-00.pyz',
  [('multiprocessing.popen_fork',
    'c:\\users\\willi\\appdata\\local\\programs\\python\\python39\\lib\\multiprocessing\\popen_fork.py',
    'PYMODULE'),

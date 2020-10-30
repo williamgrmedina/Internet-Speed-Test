@@ -103,3 +103,5 @@ sockData.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 print('\n')
 upload()
+
+input("Pressione Enter para sair.")

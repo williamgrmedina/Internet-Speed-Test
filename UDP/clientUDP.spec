@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['clientUDP.py'],
-             pathex=['C:\\Users\\willi\\Desktop\\3o Ano\\Redes\\t2-UDP'],
+             pathex=['C:\\Users\\willi\\Documents\\GitHub\\Internet-Speed-Test\\UDP'],
              binaries=[],
              datas=[],
              hiddenimports=[],
