@@ -9,3 +9,6 @@ CODIFIC = 'UTF-8'
 
 # interval between each speed check, in seconds
 UPDATE_INTERVAL = 0.5
+
+# time of each download/upload test
+TEST_TIME = 20
