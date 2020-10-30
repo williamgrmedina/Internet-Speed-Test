@@ -1,8 +1,3 @@
-##### imports is a library of functions that will be used both on client and server files ####
-
-import random
-import string
-
 # max clients
 MAX_CLI = 2
 
