@@ -33,8 +33,6 @@ while time_passed < 15:
         split_packet = packet.split(" ", 1)
         packet_num = split_packet[0]
         packet_data = split_packet[1]
-        print(f'packet num: {packet_num}')
-        print(f'packet data: {packet_data}')
         packets += 1
         time_passed = time.time() - begin
 
@@ -77,10 +75,6 @@ while time_passed < 15:
 #print(f'Tamanho dos pacotes enviados: {imp.SIZE_PACKS}')
 print(f'pacotes enviados: {packets}')
 
-while True: 
-    var = str.lower(input("Digite a senha: "))
-    if var == "eu te amo" or var == "te amo" or var == "william lindo" or var == "pai ta on":
-        s.send(var.encode(imp.CODIFIC))
-        break
+input("\nProcesso finalizado. Pressione Enter para continuar.")
     
 s.close()
