@@ -17,23 +17,35 @@ print('iniciando teste de download...')
 
 receivedList = []
 
+def restart_data(packets, end, time_passed, begin):
+    packets = 0
+    end = 0
+    time_passed = 0
+    begin = time.time()
+    return packets, end, time_passed, begin
+
 #download test
 packets = 0
 end = 0
 time_passed = 0
-cur_interval = 0
 begin = time.time()
 
 while time_passed < 15:
-    cur_interval_begin = time.time()
+    cur_interval = 0
+    interval_start = time.time()
+    
+    # receives data in packets and displays current speed at every interval end,
+    # or when given test time limit is reached
     while cur_interval < imp.UPDATE_INTERVAL and time_passed < 15:
         received = s.recv(imp.SIZE_PACKS)
         packets += 1
         time_passed = time.time() - begin
-        cur_interval = time.time() - cur_interval_begin
-        cur_speed = (packets * imp.SIZE_PACKS * 8) / (1000000 * time_passed)
+
+        cur_interval = time.time() - interval_start
+        if time_passed > 0:
+            cur_speed = (packets * imp.SIZE_PACKS * 8) / (1000000 * time_passed)
+    
     print(f'{cur_speed}')
-    cur_interval = 0
 
 print(f'pacotes recebidos client: {packets}')
 print(f'iniciando teste de upload...')
@@ -45,18 +57,28 @@ time_passed = 0
 begin = time.time()
 
 while time_passed < 15:
+    cur_interval = 0
+    interval_start = time.time()
+
+    # uploads data in packets and displays current speed at every interval end,
+    # or when given test time limit is reached
     while cur_interval < imp.UPDATE_INTERVAL and time_passed < 15:
         s.send(data)
         packets += 1
         time_passed = time.time() - begin
-    cur_interval = 0
+
+        cur_interval = time.time() - interval_start
+        if time_passed > 0:
+            cur_speed = (packets * imp.SIZE_PACKS * 8) / (1000000 * time_passed)
+    
+    print(f'{cur_speed}')
 
 #print(f'Tamanho dos pacotes enviados: {imp.SIZE_PACKS}')
 print(f'pacotes enviados: {packets}')
 
 while True: 
     var = str.lower(input("Digite a senha: "))
-    if var == "eu te amo" or var == "te amo" or var == "william lindo":
+    if var == "eu te amo" or var == "te amo" or var == "william lindo" or var == "pai ta on":
         s.send(var.encode(imp.CODIFIC))
         break
     
